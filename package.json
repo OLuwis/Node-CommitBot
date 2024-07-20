@@ -1,0 +1,27 @@
+{
+  "name": "node-commitbot",
+  "version": "1.0.0",
+  "description": "A Node and Typescript bot to make your Github green.",
+  "main": "dist/app.js",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx ./app.ts"
+  },
+  "keywords": [
+    "node",
+    "typescript",
+    "git"
+  ],
+  "author": "Luwis",
+  "license": "MIT",
+  "devDependencies": {
+    "@tsconfig/node20": "^20.1.4",
+    "@tsconfig/strictest": "^2.0.5",
+    "@types/node": "^20.14.11",
+    "tsx": "^4.16.2",
+    "typescript": "^5.5.3"
+  },
+  "dependencies": {
+    "octokit": "^4.0.2"
+  }
+}
