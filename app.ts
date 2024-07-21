@@ -6,9 +6,6 @@ const owner = "oluwis"
 const repo = "node-commitbot"
 const path = "output.txt"
 
-const date = new Date().toUTCString().replace("GMT", "UTC")
-const message = `Commit: ${date}`
-
 const octokit = new Octokit({
   auth: auth
 })
@@ -21,6 +18,7 @@ const file = await octokit.rest.repos.getContent({
 
 if (file && ("sha" && "content" in file.data)) {
   const sha = file.data.sha
+  const message = `Commit: ${new Date().toUTCString()}`
 
   const fileContent = Buffer.from(file.data.content, "base64").toString("ascii")
   const content = Buffer.from(`${message}\n${fileContent}`).toString("base64")
